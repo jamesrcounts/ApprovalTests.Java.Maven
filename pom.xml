@@ -5,8 +5,6 @@
 	<artifactId>ApprovalTest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<!-- <repositories> <repository> <id>central</id> <url>http://repo1.maven.org/maven2/</url> 
-		</repository> </repositories> -->
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -58,7 +56,6 @@
 			<artifactId>j2ssh-core</artifactId>
 			<version>0.2.9</version>
 		</dependency>
-
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -69,7 +66,6 @@
 			<artifactId>javax.mail</artifactId>
 			<version>1.4.4</version>
 		</dependency>
-
 		<dependency>
 			<groupId>quartz</groupId>
 			<artifactId>quartz</artifactId>
@@ -80,7 +76,6 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>velocity</groupId>
 			<artifactId>velocity</artifactId>
@@ -171,8 +166,6 @@
 			<artifactId>jetty-util</artifactId>
 			<version>7.0.0.RC5</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-webapp</artifactId>
@@ -198,7 +191,6 @@
 			<artifactId>easymockclassextension</artifactId>
 			<version>2.3</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.apache.hadoop</groupId>
 			<artifactId>hadoop-core</artifactId>
@@ -214,17 +206,11 @@
 			<artifactId>hadoop-test</artifactId>
 			<version>1.0.3</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.apache.mrunit</groupId>
 			<artifactId>mrunit</artifactId>
 			<version>0.9.0-incubating</version>
 		</dependency>
-
-
-
-
-
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
@@ -239,13 +225,25 @@
 			<groupId>org.apache.hadoop</groupId>
 			<artifactId>hadoop-common</artifactId>
 			<version>2.2.0</version>
-		</dependency>
-		<dependency>
-			<groupId>jdk.tools</groupId>
-			<artifactId>jdk.tools</artifactId>
-			<scope>system</scope>
-			<version>1.7.0</version>
-			<systemPath>C:/development/tools/Java/jdk1.7.0_17/lib/tools.jar</systemPath>
+			<exclusions>
+				<exclusion>
+					<artifactId>jdk.tools</artifactId>
+					<groupId>jdk.tools</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<!-- or whatever version you use -->
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
