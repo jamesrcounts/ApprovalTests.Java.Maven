@@ -59,7 +59,7 @@ public class FileUtils
   }
   public static String readFromClassPath(Class clazz, String string)
   {
-    final InputStream resourceAsStream = clazz.getResourceAsStream(string);
+    final InputStream resourceAsStream = clazz.getClassLoader().getResourceAsStream(string);
     if (resourceAsStream == null)
     {
       String message = String.format("Could not find %s from %s", string, clazz.getName());
