@@ -1,9 +1,40 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.tkp</groupId>
+	
+	<groupId>org.teachingkidsprogramming</groupId>
 	<artifactId>ApprovalTest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<description>Capturing Human Intelligence - ApprovalTests is an open source assertion/verification library to aid unit testing.</description>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<scm>
+		<connection>scm:git:git@github.com:TeachingKidsProgramming/ApprovalTests.Java.Maven.git</connection>
+		<developerConnection>scm:git:git@github.com:TeachingKidsProgramming/ApprovalTests.Java.Maven.git</developerConnection>
+		<url>https://github.com/TeachingKidsProgramming/ApprovalTests.Java.Maven.git</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<name>Bhagat Singh</name>
+			<email>bhagat.rawat@gmail.com</email>
+		</developer>
+		<developer>
+			<name>Jim Counts</name>
+			<email>jcounts18@gmail.com</email>
+			<organization>Teaching Kids Programming</organization>
+			<organizationUrl>http://teachingkidsprogramming.com/</organizationUrl>
+		</developer>
+		<developer>
+			<name>Lynn Langit</name>
+			<email>lynn@teachingkidsprogramming.org</email>
+			<organization>Teaching Kids Programming</organization>
+			<organizationUrl>http://teachingkidsprogramming.com/</organizationUrl>
+		</developer>
+	</developers>
 
 	<dependencies>
 		<dependency>
@@ -210,7 +241,7 @@
 			<groupId>org.apache.mrunit</groupId>
 			<artifactId>mrunit</artifactId>
 			<version>0.9.0-incubating</version>
-			<classifier>hadoop1</classifier> 
+			<classifier>hadoop1</classifier>
 		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>
@@ -248,6 +279,15 @@
 					<!-- or whatever version you use -->
 					<source>1.8</source>
 					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.1</version>
+				<configuration>
+					<show>private</show>
+					<nohelp>true</nohelp>
 				</configuration>
 			</plugin>
 		</plugins>
